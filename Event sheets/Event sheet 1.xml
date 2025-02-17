@@ -3,7 +3,43 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="Opacity" sid="559766075862368" static="0" type="number">100</variable>
+        <variable constant="0" name="LightEnergy" sid="321302253739988" static="0" type="number">5</variable>
         <variable constant="0" name="Dialogue" sid="800088503650447" static="0" type="number">0</variable>
+        <event-block sid="187557434349481">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="664610984685165" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="615218470212794" type="PlayerAssets">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="874850791356632">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="464478709868248" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="227086202694086" type="PlayerAssets">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="113145055721597">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="169471655734652" type="Player" />
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="652088649620385" type="PlayerAssets" />
+                <action id="4" name="Set animation" sid="441896077286824" type="PlayerAssets">
+                    <param id="0" name="Animation">&quot;Animation3&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="645417984638362">
             <conditions>
                 <condition id="2" name="Key is down" sid="170338192691675" type="Keyboard">
@@ -17,6 +53,13 @@
                 <action id="7" name="Set mirrored" sid="437733579827953" type="Player">
                     <param id="0" name="State">0</param>
                 </action>
+                <action id="7" name="Set mirrored" sid="234312849194153" type="PlayerAssets">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="778870228154526" type="PlayerAssets">
+                    <param id="0" name="Animation">&quot;Animation2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="442674382434626">
@@ -29,8 +72,15 @@
                 <action behavior="Platform" id="7" name="Simulate control" sid="377889816529858" type="Player">
                     <param id="0" name="Control">0</param>
                 </action>
+                <action id="7" name="Set mirrored" sid="340387083566499" type="PlayerAssets">
+                    <param id="0" name="State">0</param>
+                </action>
                 <action id="7" name="Set mirrored" sid="722696621068713" type="Player">
                     <param id="0" name="State">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="357379173186227" type="PlayerAssets">
+                    <param id="0" name="Animation">&quot;Animation2&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
@@ -58,6 +108,9 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Set text" sid="788602550731202" type="SourceText">
+                    <param id="0" name="Text">&quot;Ada monster yang menjaga kawasan kabut ini, kamu harus menggunakan indera penglihatanmu sebaik mungkin untuk melawannya&quot; </param>
+                </action>
                 <action id="0" name="Set text" sid="998617281132382" type="DestText">
                     <param id="0" name="Text">left(SourceText.Text, len(DestText.Text) + 1)</param>
                 </action>
@@ -112,76 +165,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="991392424255745">
-            <conditions>
-                <condition id="3" name="On key released" sid="694993509590346" type="Keyboard">
-                    <param id="0" name="Key">32</param>
-                </condition>
-                <condition id="7" inverted="1" name="Is mirrored" sid="793567812709874" type="Player" />
-            </conditions>
-            <actions>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="444878235867043" type="Player">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Bullet" id="3" name="Set angle of motion" sid="299197192678980" type="Player">
-                    <param id="0" name="Angle">180</param>
-                </action>
-                <action id="-16" name="Wait" sid="972335673042103" type="System">
-                    <param id="0" name="Seconds">0.3</param>
-                </action>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="331337002637691" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="435690180706744">
-            <conditions>
-                <condition id="3" name="On key released" sid="856186474780814" type="Keyboard">
-                    <param id="0" name="Key">32</param>
-                </condition>
-                <condition id="7" name="Is mirrored" sid="164399612539280" type="Player" />
-            </conditions>
-            <actions>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="102436112137860" type="Player">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Bullet" id="3" name="Set angle of motion" sid="274068395853627" type="Player">
-                    <param id="0" name="Angle">0</param>
-                </action>
-                <action id="-16" name="Wait" sid="411579451141175" type="System">
-                    <param id="0" name="Seconds">0.3</param>
-                </action>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="806680275464940" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="382020682932634">
-            <conditions>
-                <condition id="2" name="Key is down" sid="215019056185717" type="Keyboard">
-                    <param id="0" name="Key">32</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-17" name="Set layer scale" sid="690532838550296" type="System">
-                    <param id="0" name="Layer">&quot;Game&quot;</param>
-                    <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 2, 1 * dt ) </param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="567080493271243">
-            <conditions>
-                <condition id="2" inverted="1" name="Key is down" sid="919600775583859" type="Keyboard">
-                    <param id="0" name="Key">32</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-17" name="Set layer scale" sid="651046468442891" type="System">
-                    <param id="0" name="Layer">&quot;Game&quot;</param>
-                    <param id="1" name="Scale">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="986772874525715">
             <conditions>
                 <condition id="-1" name="Every tick" sid="215598490572053" type="System" />
@@ -191,7 +174,427 @@
                     <param id="0" name="X">Player.X</param>
                     <param id="1" name="Y">Player.Y</param>
                 </action>
+                <action id="-3" name="Set position" sid="718954737713334" type="AimPlayer">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="829349228520367" type="AimPlayer">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.y</param>
+                </action>
+                <action id="0" name="Set text" sid="111191136385678" type="INDIKATORSEMENTARA">
+                    <param id="0" name="Text">&quot;&quot;&amp;LightEnergy</param>
+                </action>
+                <action id="-3" name="Set position" sid="562334016371791" type="Aura">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="196388650524539" type="DarkSeeker">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y  </param>
+                </action>
             </actions>
+        </event-block>
+        <event-block sid="627129031956946">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="702499717866393" type="System">
+                    <param id="0" name="Variable">LightEnergy</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="367097951088952" type="System">
+                    <param id="0" name="Group name">&quot;ShotSkills&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="759051615185456" type="System">
+                    <param id="0" name="Group name">&quot;Dashing&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="845173687220161">
+            <conditions>
+                <condition id="-14" inverted="1" name="Compare variable" sid="631210921180790" type="System">
+                    <param id="0" name="Variable">LightEnergy</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="373356955449951" type="System">
+                    <param id="0" name="Group name">&quot;ShotSkills&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="392332643581124" type="System">
+                    <param id="0" name="Group name">&quot;Dashing&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="512438861280735" title="ShotSkills">
+            <sub-events>
+                <event-block sid="271721048642762">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="566714508226463" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="629074643058973" type="System">
+                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1.2, 1.2 * dt ) </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="723035300785882">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="560462124457318" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="317212672378189" type="AimPlayer">
+                            <param id="0" name="Object">BulletLaser</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="395427157644913" type="System">
+                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1, 1.2 * dt ) </param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="983180377087199" type="System">
+                            <param id="0" name="Variable">LightEnergy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="403349934558822">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="913727680612666" type="System">
+                    <param id="0" name="Variable">LightEnergy</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="539564625745284" type="System">
+                    <param id="0" name="Group name">&quot;EnergyRegen&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="829662780982839">
+            <conditions>
+                <condition id="-14" inverted="1" name="Compare variable" sid="635083654402406" type="System">
+                    <param id="0" name="Variable">LightEnergy</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="847021874481402" type="System">
+                    <param id="0" name="Group name">&quot;EnergyRegen&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="931573578409738" title="EnergyRegen">
+            <sub-events>
+                <event-block sid="640252047867736">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="200188444765530" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="200597741137103" type="System">
+                            <param id="0" name="Variable">LightEnergy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="985348936122002" title="Dashing">
+            <sub-events>
+                <event-block sid="991392424255745">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="694993509590346" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="793567812709874" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="696477316595985" type="System">
+                            <param id="0" name="Variable">LightEnergy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="444878235867043" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="299197192678980" type="Player">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="972335673042103" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="331337002637691" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="435690180706744">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="856186474780814" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="164399612539280" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="116677818295640" type="System">
+                            <param id="0" name="Variable">LightEnergy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="102436112137860" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="274068395853627" type="Player">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="411579451141175" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="806680275464940" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="382020682932634">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="215019056185717" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="690532838550296" type="System">
+                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1.2, 1.2 * dt ) </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="485030333930137">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="452843356342133" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="257118191079106" type="System">
+                            <param id="0" name="Layer">&quot;Background&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1.2, 1.2 * dt ) </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="567080493271243">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Key is down" sid="919600775583859" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="651046468442891" type="System">
+                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1, 2 * dt ) </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="463787800999556">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Key is down" sid="410453954009051" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="817160749529281" type="System">
+                            <param id="0" name="Layer">&quot;Background&quot;</param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1, 2 * dt ) </param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="166495486519920">
+            <conditions>
+                <condition id="0" name="On click" sid="768495031891163" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="926249913552074" type="AimPlayer">
+                    <param id="0" name="Object">Tinju</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="457665609692854" title="MonsterbangAim">
+            <sub-events>
+                <event-block sid="934694457080099">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="708685289140648" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="425065033715333" type="MonsterTerbang">
+                            <param id="0" name="X">Player.x</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="417268438712008">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="917555826942236" type="MonsterTerbang">
+                            <param id="0" name="Object">Aura</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="939528620264932" type="MonsterTerbang">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="214297519983171">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="203265896565130" type="MonsterTerbang">
+                            <param id="0" name="Object">Aura</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="221936656138961" type="MonsterTerbang">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="374205191902757">
+            <conditions>
+                <condition id="-18" name="On created" sid="438886916991648" type="MonsterTerbang" />
+            </conditions>
+            <actions>
+                <action behavior="Turret" id="1" name="Add object to target" sid="192680994731020" type="MonsterTerbang">
+                    <param id="0" name="Target">Player</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="969607348954324">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="150786973585917" type="MonsterTerbang" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="531346708759115" type="MonsterTerbang">
+                    <param id="0" name="Object">BolaApi</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="804827654859516">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="525205169978783" type="MonsterTerbang">
+                    <param id="0" name="Object">BulletLaser</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="452487278901643" type="MonsterTerbang">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="632572838496294">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="443662557654374" type="MonsterTerbang">
+                    <param id="0" name="Object">Tinju</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="938823472309398" type="MonsterTerbang">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="272489976529001">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="656498470958878" type="MonsterTerbang">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="658030067522657" type="MonsterTerbang" />
+            </actions>
+        </event-block>
+        <event-block sid="983241866503206">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="192153773370265" type="Fog">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="231341370160121" type="Fog">
+                    <param id="0" name="Opacity">lerp(Fog.Opacity, 100, 2* dt)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="503783682954605">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="230349723731125" type="Fog">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="234859498345727" type="Fog">
+                    <param id="0" name="Opacity">lerp(Fog.Opacity, 40, 2* dt)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="631891450477194">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="804326049284550" type="DarkSeeker">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="294068641349473" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="414727899623782" type="DarkSeeker">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="790330087642664">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="968335455322689" type="DarkSeeker">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="408631245410444" type="DarkSeeker">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="458149418072355">
+            <conditions />
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
