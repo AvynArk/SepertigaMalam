@@ -22,6 +22,7 @@
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -326,6 +327,11 @@
         </object-type>
         <object-type name="WhisperingSteps" sid="472152652256333">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="174386006078716">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="451991030602173" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
