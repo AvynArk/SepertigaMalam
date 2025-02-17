@@ -1,2 +1,2 @@
 # SepertigaMalam
-An educative game with horro vibes
+An educative game with horror vibes
