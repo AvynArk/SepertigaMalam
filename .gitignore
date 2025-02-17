@@ -1,0 +1,5 @@
+/backup/           # Abaikan folder backup
+/exported/        # Abaikan hasil ekspor game
+*.capx           # Abaikan file Capx (jika tidak ingin share source)
+*.log             # Abaikan file log
+.DS_Store        # Abaikan file macOS
