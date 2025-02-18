@@ -373,7 +373,22 @@
             </properties>
         </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="grass-227860 (mp3cut.net) (2).m4a" />
+        <file name="grass-227860 (mp3cut.net) (2).ogg" />
+        <file name="jump-landing-30946 (mp3cut.net).m4a" />
+        <file name="jump-landing-30946 (mp3cut.net).ogg" />
+        <file name="ESE - FIGHT PACK - WHOOSH - Clean 03 (mp3cut.net).m4a" />
+        <file name="ESE - FIGHT PACK - WHOOSH - Clean 03 (mp3cut.net).ogg" />
+        <file name="y2mate.com - Charging Power Up Sound Effect Electrical Energy Power Audio FREE 4K DOWNLOAD NO COPYRIGHT (mp3cut.net).m4a" />
+        <file name="y2mate.com - Charging Power Up Sound Effect Electrical Energy Power Audio FREE 4K DOWNLOAD NO COPYRIGHT (mp3cut.net).ogg" />
+        <file name="y2mate.com - 10 FREE Laser Sound Effects (mp3cut.net) (1).m4a" />
+        <file name="y2mate.com - 10 FREE Laser Sound Effects (mp3cut.net) (1).ogg" />
+        <file name="y2mate.com - Jumping Sound Effect Copyright Free (mp3cut.net) (1).m4a" />
+        <file name="y2mate.com - Jumping Sound Effect Copyright Free (mp3cut.net) (1).ogg" />
+        <file name="y2mate.com - Jump Sound Effects All Sounds (mp3cut.net) (1).m4a" />
+        <file name="y2mate.com - Jump Sound Effects All Sounds (mp3cut.net) (1).ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
