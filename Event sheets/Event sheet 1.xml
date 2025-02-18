@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="Whisper" sid="999431879311257" static="0" type="number">0</variable>
         <variable constant="0" name="HP_player" sid="216028476154193" static="0" type="number">10</variable>
         <variable constant="0" name="Opacity" sid="559766075862368" static="0" type="number">100</variable>
         <variable constant="0" name="LightEnergy" sid="321302253739988" static="0" type="number">5</variable>
@@ -745,18 +746,70 @@
                 <action id="-9" name="Destroy" sid="504899484012912" type="DarkSeeker" />
             </actions>
         </event-block>
-        <event-block sid="128696060690336">
+        <event-block sid="682965184547093">
             <conditions>
-                <condition id="-6" name="Every X seconds" sid="702827128070745" type="System">
-                    <param id="0" name="Interval (seconds)">0.01</param>
-                </condition>
+                <condition id="-2" name="On start of layout" sid="694825124038880" type="System" />
             </conditions>
             <actions>
-                <action id="-4" name="Set position to another object" sid="517647908100504" type="Player">
-                    <param id="0" name="Object">WhisperingSteps</param>
-                    <param id="1" name="Image point (optional)">0</param>
+                <action id="0" name="Play" sid="126985700157024" type="Audio">
+                    <param id="0" name="Audio file">726368__christmaskrumble666__street-museum-dark-ambient-bgm</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="424500941431088" title="WhisperingBeam">
+            <sub-events>
+                <event-block sid="967698536761452">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="436628646563348" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SteppingOne</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="717849506533589" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="960330958901080" type="Player">
+                            <param id="0" name="X">SteppingOne.X</param>
+                            <param id="1" name="Y">SteppingOne.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="135516720134399">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="680643785691605" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SteppingTwo</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="379154380047803" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="218426260816809" type="Player">
+                            <param id="0" name="X">SteppingTwo.X</param>
+                            <param id="1" name="Y">SteppingTwo.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="106669888452395">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="100687585732063" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Stepping3</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="515674866282241" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="370039736557471" type="Player">
+                            <param id="0" name="X">Stepping3.X</param>
+                            <param id="1" name="Y">Stepping3.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

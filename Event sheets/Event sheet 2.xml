@@ -2,5 +2,30 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 2</name>
-    <events />
+    <events>
+        <event-block sid="549824647587081">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="269582108977956" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="228964277724435" type="Audio">
+                    <param id="0" name="Audio file">HomeskrinS3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="131618634399900">
+            <conditions>
+                <condition id="1" name="On any click" sid="115655274096794" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="903351069583425" type="Audio" />
+                <action id="-2" name="Go to layout" sid="152749691503149" type="System">
+                    <param id="0" name="Layout">Layout 1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
