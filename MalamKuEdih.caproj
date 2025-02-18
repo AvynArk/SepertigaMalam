@@ -22,6 +22,7 @@
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -32,6 +33,8 @@
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="brightness">Brightness</effect>
+        <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
+        <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
     </used-effects>
     <configurations>
@@ -199,7 +202,9 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897810739569505" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="1.005" y="0.5025" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -287,6 +292,11 @@
             <instance-variables>
                 <instance-variable name="Opaciti" sid="637498232182977" type="number" />
             </instance-variables>
+            <effects>
+                <effect-type name="BlurHorizontal">
+                    <effect id="blurhorizontal" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="916660803253019" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -295,6 +305,9 @@
         </object-type>
         <object-type name="DarkSeeker" sid="755533749750740">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Hp" sid="366590868535949" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="381569372371259">
                     <behavior id="Bullet" />
@@ -314,6 +327,11 @@
         </object-type>
         <object-type name="WhisperingSteps" sid="472152652256333">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="174386006078716">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="451991030602173" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -347,13 +365,98 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="HomeScreen" sid="997570745818956">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="470850930004164">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Sine2" sid="588351420052739">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="GlowHorizontal">
+                    <effect id="glowhorizontal" />
+                </effect-type>
+                <effect-type name="GlowVertical">
+                    <effect id="glowvertical" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="488716394576193" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500173" original-source="C:\Users\zakwa\Downloads\Background_katanya...png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Judul" sid="213014973714327">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="701478257793357">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Sine2" sid="979754919761791">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Brightness">
+                    <effect id="brightness" />
+                </effect-type>
+                <effect-type name="GlowHorizontal">
+                    <effect id="glowhorizontal" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945753881030924" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zakwa\Downloads\Untitled_Artwork.png">
+                        <collision-poly>
+                            <point x="0.334664" y="0.473387" />
+                            <point x="0.5" y="0.301613" />
+                            <point x="0.746294" y="0.358871" />
+                            <point x="0.739168" y="0.5" />
+                            <point x="0.752851" y="0.650403" />
+                            <point x="0.5" y="0.615726" />
+                            <point x="0.416477" y="0.410887" />
+                            <point x="0.281927" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DashTrail" sid="979218099370813">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="181515475201008">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="245282647658065" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zakwa\Downloads\IMG_2042.GIF">
+                        <collision-poly>
+                            <point x="0.475728" y="0.356364" />
+                            <point x="0.5" y="0.347273" />
+                            <point x="0.667476" y="0.249091" />
+                            <point x="0.609223" y="0.5" />
+                            <point x="0.536408" y="0.652727" />
+                            <point x="0.5" y="0.683636" />
+                            <point x="0.291262" y="0.781818" />
+                            <point x="0.283981" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
+        <layout>HomeScreen.xml</layout>
         <layout>Layout 1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />

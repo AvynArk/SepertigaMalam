@@ -3,7 +3,11 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+<<<<<<< HEAD
         <variable constant="0" name="stepTimer" sid="360009908172341" static="0" type="number">0</variable>
+=======
+        <variable constant="0" name="HP_player" sid="216028476154193" static="0" type="number">10</variable>
+>>>>>>> 509a2b657f664a7a5d7feb0c95eab8396953dc2d
         <variable constant="0" name="Opacity" sid="559766075862368" static="0" type="number">100</variable>
         <variable constant="0" name="LightEnergy" sid="321302253739988" static="0" type="number">5</variable>
         <variable constant="0" name="Dialogue" sid="800088503650447" static="0" type="number">0</variable>
@@ -265,7 +269,7 @@
                         <action id="0" name="Spawn another object" sid="317212672378189" type="AimPlayer">
                             <param id="0" name="Object">BulletLaser</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
+                            <param id="2" name="Image point">1</param>
                         </action>
                         <action id="-17" name="Set layer scale" sid="395427157644913" type="System">
                             <param id="0" name="Layer">&quot;Game&quot;</param>
@@ -275,6 +279,7 @@
                             <param id="0" name="Variable">LightEnergy</param>
                             <param id="1" name="Value">1</param>
                         </action>
+<<<<<<< HEAD
                         <action id="6" name="Stop" sid="301516939433543" type="Audio">
                             <param id="0" name="Tag">&quot;laserCharge&quot;</param>
                         </action>
@@ -283,6 +288,12 @@
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;laserNembak&quot;</param>
+=======
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="505701569197271" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">0.2</param>
+                            <param id="2" name="Mode">1</param>
+>>>>>>> 509a2b657f664a7a5d7feb0c95eab8396953dc2d
                         </action>
                     </actions>
                 </event-block>
@@ -345,6 +356,11 @@
                         <condition id="7" inverted="1" name="Is mirrored" sid="793567812709874" type="Player" />
                     </conditions>
                     <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="966255587583825" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">0.2</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
                         <action id="-11" name="Subtract from" sid="696477316595985" type="System">
                             <param id="0" name="Variable">LightEnergy</param>
                             <param id="1" name="Value">1</param>
@@ -355,11 +371,19 @@
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="299197192678980" type="Player">
                             <param id="0" name="Angle">180</param>
                         </action>
+                        <action id="-12" name="Set group active" sid="922912384812307" type="System">
+                            <param id="0" name="Group name">&quot;Dashtrail&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
                         <action id="-16" name="Wait" sid="972335673042103" type="System">
                             <param id="0" name="Seconds">0.3</param>
                         </action>
                         <action behavior="Bullet" id="5" name="Set enabled" sid="331337002637691" type="Player">
                             <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="576873405368304" type="System">
+                            <param id="0" name="Group name">&quot;Dashtrail&quot;</param>
+                            <param id="1" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -371,6 +395,11 @@
                         <condition id="7" name="Is mirrored" sid="164399612539280" type="Player" />
                     </conditions>
                     <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="115732312682422" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">0.2</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
                         <action id="-11" name="Subtract from" sid="116677818295640" type="System">
                             <param id="0" name="Variable">LightEnergy</param>
                             <param id="1" name="Value">1</param>
@@ -381,11 +410,19 @@
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="274068395853627" type="Player">
                             <param id="0" name="Angle">0</param>
                         </action>
+                        <action id="-12" name="Set group active" sid="707270979226952" type="System">
+                            <param id="0" name="Group name">&quot;Dashtrail&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
                         <action id="-16" name="Wait" sid="411579451141175" type="System">
                             <param id="0" name="Seconds">0.3</param>
                         </action>
                         <action behavior="Bullet" id="5" name="Set enabled" sid="806680275464940" type="Player">
                             <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="376185103814213" type="System">
+                            <param id="0" name="Group name">&quot;Dashtrail&quot;</param>
+                            <param id="1" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -398,7 +435,7 @@
                     <actions>
                         <action id="-17" name="Set layer scale" sid="690532838550296" type="System">
                             <param id="0" name="Layer">&quot;Game&quot;</param>
-                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1.2, 1.2 * dt ) </param>
+                            <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 0.8, 1.2 * dt ) </param>
                         </action>
                     </actions>
                 </event-block>
@@ -615,8 +652,138 @@
             </actions>
         </event-block>
         <event-block sid="458149418072355">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="246940466497072" type="DarkSeeker">
+                    <param id="0" name="Object">BulletLaser</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="579980363845702" type="DarkSeeker">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="941327764107255">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="908145377594250" type="DarkSeeker">
+                    <param id="0" name="Object">Tinju</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="664635914970343" type="DarkSeeker">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="553525945159943">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="177554021404339" type="Player">
+                    <param id="0" name="Object">DarkSeeker</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="952453139873284" type="DarkSeeker">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="420498736963431" type="System">
+                    <param id="0" name="Variable">HP_player</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="820833848196428" type="Player">
+                    <param id="0" name="Magnitude">20</param>
+                    <param id="1" name="Duration">0.4</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="972797605009260" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="583071364320562" type="DarkSeeker">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="647341577253986">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="399763522226668" type="Player">
+                    <param id="0" name="Object">BolaApi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="662876598000041" type="System">
+                    <param id="0" name="Variable">HP_player</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="210707092332391" type="Player">
+                    <param id="0" name="Magnitude">20</param>
+                    <param id="1" name="Duration">0.4</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="125356705548954" title="Dashtrail">
+            <sub-events>
+                <event-block sid="414060714247224">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="960008926566044" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="229384347695184" type="PlayerAssets">
+                            <param id="0" name="Object">DashTrail</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="877733810001170">
+            <conditions>
+                <condition id="7" name="Is mirrored" sid="478959424632559" type="PlayerAssets" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="137548683149871" type="DashTrail">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="109881068707408">
+            <conditions>
+                <condition id="7" inverted="1" name="Is mirrored" sid="436183228914048" type="PlayerAssets" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="581118405203339" type="DashTrail">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="393635697532715">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="245017388064529" type="DarkSeeker">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="504899484012912" type="DarkSeeker" />
+            </actions>
+        </event-block>
+        <event-block sid="128696060690336">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="702827128070745" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="517647908100504" type="Player">
+                    <param id="0" name="Object">WhisperingSteps</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
         </event-block>
         <event-group description="" sid="478834492991702" title="Audio">
             <sub-events>
