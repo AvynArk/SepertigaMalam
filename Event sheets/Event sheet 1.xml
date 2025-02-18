@@ -3,8 +3,15 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+<<<<<<< HEAD
         <variable constant="0" name="Whisper" sid="999431879311257" static="0" type="number">0</variable>
+=======
+<<<<<<< HEAD
+        <variable constant="0" name="stepTimer" sid="360009908172341" static="0" type="number">0</variable>
+=======
+>>>>>>> 4f78b3d42c902047bf6c100c8cbd623426983677
         <variable constant="0" name="HP_player" sid="216028476154193" static="0" type="number">10</variable>
+>>>>>>> 509a2b657f664a7a5d7feb0c95eab8396953dc2d
         <variable constant="0" name="Opacity" sid="559766075862368" static="0" type="number">100</variable>
         <variable constant="0" name="LightEnergy" sid="321302253739988" static="0" type="number">5</variable>
         <variable constant="0" name="Dialogue" sid="800088503650447" static="0" type="number">0</variable>
@@ -248,6 +255,12 @@
                             <param id="0" name="Layer">&quot;Game&quot;</param>
                             <param id="1" name="Scale">lerp(LayerScale(&quot;Game&quot;), 1.2, 1.2 * dt ) </param>
                         </action>
+                        <action id="0" name="Play" sid="248964561264129" type="Audio">
+                            <param id="0" name="Audio file">y2mate.com - Charging Power Up Sound Effect Electrical Energy Power Audio FREE 4K DOWNLOAD NO COPYRIGHT (mp3cut.net)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;laserCharge&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="723035300785882">
@@ -270,10 +283,21 @@
                             <param id="0" name="Variable">LightEnergy</param>
                             <param id="1" name="Value">1</param>
                         </action>
+<<<<<<< HEAD
+                        <action id="6" name="Stop" sid="301516939433543" type="Audio">
+                            <param id="0" name="Tag">&quot;laserCharge&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="897299334278075" type="Audio">
+                            <param id="0" name="Audio file">y2mate.com - 10 FREE Laser Sound Effects (mp3cut.net) (1)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;laserNembak&quot;</param>
+=======
                         <action behavior="ScrollTo" id="0" name="Shake" sid="505701569197271" type="Player">
                             <param id="0" name="Magnitude">10</param>
                             <param id="1" name="Duration">0.2</param>
                             <param id="2" name="Mode">1</param>
+>>>>>>> 509a2b657f664a7a5d7feb0c95eab8396953dc2d
                         </action>
                     </actions>
                 </event-block>
@@ -472,6 +496,12 @@
                     <param id="0" name="Object">Tinju</param>
                     <param id="1" name="Layer">&quot;Game&quot;</param>
                     <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Play" sid="800191279167021" type="Audio">
+                    <param id="0" name="Audio file">ESE - FIGHT PACK - WHOOSH - Clean 03 (mp3cut.net)</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">10</param>
+                    <param id="1" name="Tag (optional)">&quot;tinju&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -759,6 +789,7 @@
                 </action>
             </actions>
         </event-block>
+<<<<<<< HEAD
         <event-group description="" sid="424500941431088" title="WhisperingBeam">
             <sub-events>
                 <event-block sid="967698536761452">
@@ -809,6 +840,78 @@
                         </action>
                     </actions>
                 </event-block>
+=======
+        <event-group description="" sid="478834492991702" title="Audio">
+            <sub-events>
+                <event-group description="" sid="406780548277920" title="jump">
+                    <sub-events>
+                        <event-block sid="298851246243009">
+                            <conditions>
+                                <condition behavior="Platform" id="5" name="On jump" sid="212577617197820" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="139226549350135" type="Audio">
+                                    <param id="0" name="Audio file">y2mate.com - Jump Sound Effects All Sounds (mp3cut.net) (1)</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-15</param>
+                                    <param id="1" name="Tag (optional)">&quot;lompat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="960594562585864">
+                            <conditions>
+                                <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="796363060990301" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="225825665670900" type="Audio">
+                                    <param id="0" name="Tag">&quot;lompat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="363316306532694">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="999243611257933" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="107955322878554" type="Audio">
+                                    <param id="0" name="Audio file">jump-landing-30946 (mp3cut.net)</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">10</param>
+                                    <param id="1" name="Tag (optional)">&quot;jatoh&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="126104112875945" title="moving">
+                    <sub-events>
+                        <event-block sid="466364536469341">
+                            <conditions>
+                                <condition behavior="Platform" id="8" name="On moved" sid="579363514839438" type="Player" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="729953726023335" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="382215216420082" type="Audio">
+                                    <param id="0" name="Audio file">grass-227860 (mp3cut.net) (2)</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">10</param>
+                                    <param id="1" name="Tag (optional)">&quot;jalan&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="580145997950970">
+                            <conditions>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="565387240533907" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="118330481217516" type="Audio">
+                                    <param id="0" name="Tag">&quot;jalan&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+>>>>>>> 4f78b3d42c902047bf6c100c8cbd623426983677
             </sub-events>
         </event-group>
     </events>
